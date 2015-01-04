@@ -30,8 +30,8 @@
     <div class="field">
     <%= f.label :password_confirmation, "Password confirmation:" %><br>
     <%= f.password_field :password_confirmation %>
-  </div>
+  </div><br/>
   <div class="actions">
-  <%= f.submit "Sign-up"%>
+  <%= f.submit "#{params[:action].capitalize}"%>
   </div>  
 <% end %>

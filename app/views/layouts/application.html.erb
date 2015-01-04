@@ -15,6 +15,6 @@
 
 <%= yield %>
 <br/>
-User_Id: <%=session[:user_id]%> | <%=@cart.line_items%>
+User_Id: <%=session[:user_id]%> | <%=@cart.line_items%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
 </body>
 </html>

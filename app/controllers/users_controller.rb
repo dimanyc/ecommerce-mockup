@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 			respond_to do |format|
 				if @user.save
 					session[:user_id] = @user.id 
-					format.html { redirect_to home_path, notice: 'govno' }
+					format.html { redirect_to home_path, notice: 'User has been created' }
 				else
 	        		format.html { render :new }
 	        		format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -22,7 +22,18 @@ class UsersController < ApplicationController
 	
 	# Read
 	def show
-		@user = User.find(session[:user_id])
+		@user = current_user
+	end
+
+	# Update
+	def edit
+		@user = current_user
+	end
+
+	def update
+		respond_to do |format|
+		if @user.update(user_params)
+
 	end
 
 	private

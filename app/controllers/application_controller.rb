@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_cart
 
+
 	
 	def set_cart
 	  	@cart = Cart.find(session[:cart_id])
@@ -11,5 +12,11 @@ class ApplicationController < ActionController::Base
 	  	@cart = Cart.create
 	  	session[:cart_id] = @cart.id  	
 	end
+
+	def current_user
+		return unless session[:user_id]
+		@current_user ||= User.find(session[:user_id])
+	end	
+ 	
 
 end
