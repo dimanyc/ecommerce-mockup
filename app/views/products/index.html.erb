@@ -1,0 +1,6 @@
+<br/>
+<%@products.each do |i|%>
+	<%=link_to product_path(i) do%>
+		<%=i.title%><%=i.image_url%>
+	<%end%>
+<%end%>

@@ -1,0 +1,6 @@
+<% if session[:user_id] %>
+	<span>Hello, <%=link_to "#{@user.fname.capitalize}", user_path(@user.id)%></span>
+	<%=link_to "logout", session_path(session[:user_id]), method: "delete" %> 
+	<% else %>
+	<%=link_to "login", new_session_path%> 
+<%end%>

@@ -1,0 +1,23 @@
+<h1>Your Order</h1>
+
+
+<ul>
+<%@cart.line_items.each do |i|%>
+<li><%=Product.find(i.product_id).title%></li>
+<%end%>
+</ul>
+<%= number_to_currency(@cart.total_price) %>
+
+<%=link_to "Place Your Order", orders_path(@order), action: "create", method: "post" %>
+<!--Errors -->
+<% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

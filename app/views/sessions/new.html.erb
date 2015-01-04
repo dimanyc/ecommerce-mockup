@@ -1,0 +1,19 @@
+<h1>Sign-in:</h1>
+
+
+<%=form_tag(sessions_path, method: "post") do %>
+
+<div class="field">
+	<%=label_tag(:email, "Email:") %> <br/>
+	<%=text_field_tag(:email) %>
+</div>
+
+<div class="field">
+	<%=label_tag(:password,"Password:")%><br/>
+	<%=password_field_tag(:password) %>
+</div><br/>
+<%=submit_tag("Submit") %>
+<%end%>
+<br/>
+or <br/>
+<%=link_to "Log-In", sessions_path(@session) %>

@@ -1,0 +1,12 @@
+<%@cart.line_items.each do |i| %>
+<%=i.quantity%> &times; <%=Product.find(i.product_id).title%> | <%=number_to_currency(Product.find(i.product_id).price)%><br/>
+<%end%>
+
+<%= number_to_currency(cart.total_price) %>
+
+<%= button_to 'Empty cart', cart, method: :delete,
+data: { confirm: 'Are you sure?' } %> 
+
+<%= link_to 'Checkout', new_card_path%> &nbsp;|&nbsp;
+
+<%= link_to "Continue Shopping", products_path %>

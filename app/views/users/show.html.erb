@@ -1,0 +1,5 @@
+<h1>Welcome, <%=@user.fname%></h1>
+<hr/>
+<h4>Would you like to:</h4>
+<%=link_to "View Your Order", orders_path(@user.orders)%><br/>
+<%=link_to "View &amp; Edit Your Credit Cards", cards_path(@user.orders)%><br/>

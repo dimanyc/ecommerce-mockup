@@ -1,0 +1,40 @@
+<%= form_for(@card) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= f.label :type,"Card Type" %><br>
+    <%= select_tag(:type, options_for_select(["American Express","Mastercard","Visa","Discover"])) %>
+  </div>
+  <div class="field">
+    <%= f.label :number,"Card Number" %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :ccv, "CCV code" %><br>
+    <%= f.text_field :ccv %>
+  </div>
+  <div class="field">
+    <%= f.label :fname, "First Name" %><br>
+    <%= f.text_field :fname %>
+  </div>    
+  <div class="field">
+    <%= f.label :lname, "Last Name" %><br>
+    <%= f.text_field :lname %>
+  </div><br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>  
+<% end %>
+
+
+    
