@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		
-
 			respond_to do |format|
 				if @user.save
 					session[:user_id] = @user.id 
@@ -31,8 +30,15 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		@user = current_user
 		respond_to do |format|
-		if @user.update(user_params)
+			if @user.update(user_params)
+				format.html {redirect_to home_path, notice: "Changes have been saved"}
+			else
+				format.html {render :edit}
+				format.json { render json: @user.errors, status: :unprocessable_entity }
+	      	end
+    	end
 
 	end
 

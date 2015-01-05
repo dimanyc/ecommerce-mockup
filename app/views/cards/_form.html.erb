@@ -12,8 +12,8 @@
   <% end %>
 
  <div class="field">
-    <%= f.label :type,"Card Type" %><br>
-    <%= select_tag(:type, options_for_select(["American Express","Mastercard","Visa","Discover"])) %>
+    <%= f.label :cc_type,"Card Type" %><br>
+    <%= select_tag(:cc_type, options_for_select(["American Express","Mastercard","Visa","Discover"])) %>
   </div>
   <div class="field">
     <%= f.label :number,"Card Number" %><br>

@@ -1,0 +1,10 @@
+<h1>Cards you previously used:</h1>
+<ul>
+<% @cards.each do |i| %>
+	<li>
+		<%=link_to card_path(i) do %>
+		<strong><%=i.cc_type%>,</strong> ending in <em><%=i.number.to_s.last(4)%>.</em>
+		<%end%>
+	</li>
+<%end%>
+</ul>

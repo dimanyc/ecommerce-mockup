@@ -1,7 +1,7 @@
 class CreateCards < ActiveRecord::Migration
   def change
     create_table :cards do |t|
-    	t.string :type
+    	t.string :cc_type
     	t.integer :number
     	t.integer :ccv
     	t.string :fname

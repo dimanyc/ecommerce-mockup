@@ -7,12 +7,14 @@ class CardsController < ApplicationController
 
 	def create
 		@card = Card.new(card_params)
+		@card.cc_type = params[:cc_type]
 		@user = User.find(session[:user_id])
 
 		if 	session[:user_id]
 			respond_to do |format|
 				if @card.save
 					@user.cards << @card
+					
 					format.html { redirect_to new_order_path, notice: 'Card has been added' }
 				else
 	        		format.html { render :new }
@@ -26,6 +28,15 @@ class CardsController < ApplicationController
 
 	end
 
+	# Read
+	def index
+		@user = current_user
+		@cards = @user.cards 
+	end
+
+	def show
+		
+	end
 
 	private
 

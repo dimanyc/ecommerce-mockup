@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150104204241) do
 
   create_table "cards", force: true do |t|
-    t.string   "type"
+    t.string   "cc_type"
     t.integer  "number"
     t.integer  "ccv"
     t.string   "fname"

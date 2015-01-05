@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new,:create,:destroy]
   resources :line_items, only: [:new,:show,:create,:destroy]
   resources :carts, only: [:new,:show,:create,:destroy]
-  resources :cards, only: [:new,:create,:destroy]
-  resources :orders, only: [:new,:create,:destroy] 
+  resources :cards
+  resources :orders
 
-  root 'products#index', as: 'home'
+  root 'home#index', as: 'home'
 
 end

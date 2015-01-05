@@ -7,14 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+	<div class="row">
+	<%=flash[:notice] if flash[:notice]%><%=flash[:alert] if flash[:alert]%><br/>
 
-<%=flash[:notice] if flash[:notice]%><%=flash[:alert] if flash[:alert]%><br/>
 
+	<%= render "layouts/login" %>
+	
+	<%=link_to home_path, class: "logo" do%>
+		<h1>elixir</h1>
+		<hr/>
+	<%end%>
 
-<%= render "layouts/login" %>
-
-<%= yield %>
-<br/>
-User_Id: <%=session[:user_id]%> | <%=@cart.line_items%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
+	<%= yield %>
+	<br/>
+	User_Id: <%=session[:user_id]%> | <%=@cart.line_items%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
+	</div><!--end_.row-->
+</div><!--end_.container-->		
 </body>
 </html>
