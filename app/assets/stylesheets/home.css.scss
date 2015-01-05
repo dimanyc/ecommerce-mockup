@@ -4,3 +4,67 @@
 
 
 
+section.products 
+	{
+		display: table;
+		table-layout: fixed;
+		
+		
+		hgroup
+			{
+				display: table-row;
+
+				min-width: 100%;
+				text-align: center;
+				h4
+					{
+						
+						text-align: center;
+						margin-top:20px;
+						margin-bottom:10px;
+						padding-bottom:0px;
+						font-size:24px;
+						width:100%;
+
+
+					}
+				hr
+					{
+						width:80px;
+						height:4px;
+						background-color:black;	
+						margin-top:0px;	
+					}
+			}
+				div
+					{
+						display: table-cell;
+						padding:15px;
+						a
+							{
+								max-height: 100%;
+								img 
+									{
+										width:100%!important;
+									}
+								span
+									{
+										width:100%;
+										display: block;
+										margin-top:10px;
+										font-family: "Times New Roman", Times, serif;
+										b
+										{
+											font-family: 'ProximaNovaBold';
+											font-size:18px;
+											text-transform: uppercase;
+										}
+										text-align: center;
+										color:black;
+									}		
+							}
+					}
+					div.child-0{padding-left:0!important;}			
+					div.child-3{padding-right:0!important;}					
+
+	}

@@ -1,0 +1,115 @@
+$black: black;
+$grey: lightslategray;
+$greybg: whitesmoke;
+$highlight:crimson;
+
+body 
+	{
+		font-family: 'ProximaNova',sans-serif;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+		text-shadow: rgba(0,0,0,.01) 0 0 1px;
+		font-size:16px;
+
+		h1,h2,h3,h4,h5,h6
+			{
+				font-family: 'ProximaNovaBold', sans-serif;
+				color:$black;
+				text-transform: uppercase;
+				font-weight:bold;
+				letter-spacing: .05em;
+			}
+	}
+a
+	{
+		text-decoration:none;
+		color:$black;
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+		color:$highlight!important;
+	}
+a:hover, a:focus
+	{
+		color:$highlight;
+		text-decoration: none!important;
+	}	
+*{border-radius: 0px!important;}
+.row{overflow:hidden!important;}
+.flash-alerts
+	{
+		z-index:9999;
+		position:absolute;
+		left:50%;
+	}
+.alert
+	{
+		position:relative;
+		top:0;
+		left: -50%;
+		display: block;
+		width:100%;
+		border-radius: 0px;
+	}
+header
+	{
+		
+		width:100%;
+		position:relative;
+		text-align: center;
+		.logo
+			{
+				text-align: center!important;
+				span
+				{
+					width:28%;
+					display: block;
+					margin:auto;
+					background-color:white;
+					text-align: center;
+					z-index:4;
+					position: relative;
+					margin-bottom:20px;
+						h1,h4
+							{
+								width:99%;
+								margin:auto;
+								text-align: center!important;
+
+							}
+						h1:hover,h4:hover {text-decoration: none;}	
+					h1
+					{
+						font-size:62px;
+						letter-spacing: .20em;
+						margin-right:-.20em;
+						text-align: right;
+					}
+					h4
+						{
+							
+							font-weight:700;
+							letter-spacing: .27em;
+							margin-right:-.50em;
+							text-align: right;							
+						}																
+				}
+
+				hr 	{
+						border:solid 5px $greybg;
+						position:absolute;
+						width:99%;
+						bottom:30px;
+						z-index:3;
+					}
+
+			}
+		span.user-panel
+			{
+				display: block;
+				text-align: right;
+				margin-top:20px;	
+			}
+	}

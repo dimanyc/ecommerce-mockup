@@ -9,20 +9,28 @@
 <body>
 <div class="container">
 	<div class="row">
-	<%=flash[:notice] if flash[:notice]%><%=flash[:alert] if flash[:alert]%><br/>
-
-
-	<%= render "layouts/login" %>
+	<%= render "layouts/alerts" %>
+	<header>
 	
-	<%=link_to home_path, class: "logo" do%>
-		<h1>elixir</h1>
-		<hr/>
-	<%end%>
+	<%= render "layouts/login" %>
+		
+			<%= link_to home_path, class: "logo text-center" do %>
+			<span>
+				<h1>Elixir</h1>
+				<h4>SCI-FI classics</h4>
+			</span>				
+				<hr/>
+
+			<%end%>
+	
+	</header>
 
 	<%= yield %>
-	<br/>
-	User_Id: <%=session[:user_id]%> | <%=@cart.line_items%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
-	</div><!--end_.row-->
-</div><!--end_.container-->		
+
+		<br/>
+		User_Id: <%=session[:user_id]%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
+	</div><!--end_row-->
+</div><!--end_container-->	
+
 </body>
 </html>

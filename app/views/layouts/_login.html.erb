@@ -1,7 +1,16 @@
 <% if @current_user %>
-	<span>Hello, <%=link_to "#{@current_user.fname}", user_path(@current_user.id)%></span>
-	<%=link_to "logout", session_path(session[:user_id]), method: "delete" %> 
-	<%else%>
-	<%=link_to "login", new_session_path%> 
+	<span class="user-panel">Hello, 
+		<%= link_to user_path(@current_user.id) do %>
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%=@current_user.fname.capitalize%> &nbsp;|&nbsp;
+		<% end %>
+	
+	<%= link_to "Logout", session_path(session[:user_id]), method: "delete" %> 
+	<% else %>
+	<%= link_to new_session_path do %> 
+	<span class="user-panel">
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login 
+	</span>
+	<% end %>
+	</span>
 
 <%end%>
