@@ -38,6 +38,15 @@ a:hover, a:focus
 	}	
 *{border-radius: 0px!important;}
 .row{overflow:hidden!important;}
+.field_with_errors
+	{
+		color: $highlight;
+		input[type=text]
+			{
+				border-color: $highlight;
+			}
+
+	}
 .flash-alerts
 	{
 		z-index:9999;

@@ -46,6 +46,10 @@ section.products
 								img 
 									{
 										width:100%!important;
+										filter: grayscale(100%);
+										-webkit-filter: grayscale(100%);  /* For Webkit browsers */
+										filter: gray;  /* For IE 6 - 9 */
+										-webkit-transition: all .6s ease;  /* Transition for Webkit browsers */										
 									}
 								span
 									{
@@ -64,7 +68,14 @@ section.products
 									}		
 							}
 					}
-					div.child-0{padding-left:0!important;}			
-					div.child-3{padding-right:0!important;}					
+						div.child-0{padding-left:0!important;}			
+						div.child-3{padding-right:0!important;}	
+						a:hover img
+							{
+								filter: grayscale(0%);
+								-webkit-filter: grayscale(0%);
+								filter: none;
+										
+							}				
 
 	}

@@ -1,4 +1,36 @@
-<%=@product.title%>
-<%=@product.image_url%>
-<%= button_to 'Add to Cart', line_items_path(product_id: params[:id])%>		
-<%=link_to "Edit", edit_product_path(@product)%>
+<div class="col-md-4">
+	<section class="product-image">
+		<%=image_tag(@product.image_url)%>
+	</section>
+</div>
+
+<div class="col-md-8">
+	<section class="product-description">
+		<p>
+		  <strong>Title:</strong>
+		  <%= @product.title %>
+		</p>
+
+		<p>
+		  <strong>Author(s):</strong>
+		  <%= @product.author %>
+		</p>
+
+		<p>
+		  <strong>Description:</strong>
+		  <%= @product.description %>
+		</p>
+
+		<p>
+		  <strong>Price:</strong>
+		  <%= @product.price %>
+		</p>
+
+		<%= button_to 'Add to Cart', line_items_path(product_id: params[:id])%>	
+
+		<hr/>
+		<h4>Admin stuff</h4>
+		<%= link_to 'Edit', edit_product_path(@product) %>
+	</section>
+</div>
+
