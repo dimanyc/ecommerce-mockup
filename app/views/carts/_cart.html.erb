@@ -4,9 +4,9 @@
 
 <%= number_to_currency(cart.total_price) %>
 
-<%= button_to 'Empty cart', cart, method: :delete,
-data: { confirm: 'Are you sure?' } %> 
+<%= button_to 'Checkout', new_card_path, method: :get  %> 
+<br/>
+<%= link_to 'Clear Cart', cart_path,method: :delete,
+data: { confirm: 'Are you sure?' }%> &nbsp;|&nbsp;
 
-<%= link_to 'Checkout', new_card_path%> &nbsp;|&nbsp;
-
-<%= link_to "Continue Shopping", products_path %>
+<%= link_to "Continue Shopping", home_path %>

@@ -27,13 +27,17 @@
 
 	<%= yield %>
 
-		<br/>
-		<small>
-		<b>debugger:</b>
-		User_Id: <%=session[:user_id]%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%>
-		</small>
 	</div><!--end_row-->
-</div><!--end_container-->	
+</div><!--end_container-->
+
+<footer class="footer">
+  	<div class="container">
+
+			<p class="text-muted"><%=Time.now.year%> &copy; Dimitry Nazarov &nbsp;|&nbsp; No rights reserved. Loot away! &nbsp;|&nbsp; <b>debugger:</b>
+		User_Id: <%=session[:user_id]%> | Controller: <%=params[:controller]%> | Action: <%=params[:action]%></p>
+		
+	</div>
+</footer>	
 
 </body>
 </html>

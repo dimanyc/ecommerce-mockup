@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :orders
 
   root 'home#index', as: 'home'
+  get '/about', to: 'home#about'
 
 end

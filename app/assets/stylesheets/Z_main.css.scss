@@ -3,6 +3,13 @@ $grey: lightslategray;
 $greybg: whitesmoke;
 $highlight:crimson;
 
+
+/*Globals*/
+html
+	{
+		position: relative;
+		min-height: 100%;
+	}
 body 
 	{
 		font-family: 'ProximaNova',sans-serif;
@@ -11,13 +18,14 @@ body
 		-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 		text-shadow: rgba(0,0,0,.01) 0 0 1px;
 		font-size:16px;
+		margin-bottom:60px;/*for stick footer*/
 
 		h1,h2,h3,h4,h5,h6
 			{
 				font-family: 'ProximaNovaBold', sans-serif;
 				color:$black;
 				text-transform: uppercase;
-				font-weight:bold;
+				// font-weight:bold;
 				letter-spacing: .05em;
 			}
 	}
@@ -37,6 +45,16 @@ a:hover, a:focus
 		text-decoration: none!important;
 	}	
 *{border-radius: 0px!important;}
+
+hr
+	{
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border: 0;
+		border-top: 1px solid #eee;
+	}
+
+
 .row{overflow:hidden!important;}
 .field_with_errors
 	{
@@ -102,7 +120,8 @@ header
 							font-weight:700;
 							letter-spacing: .27em;
 							margin-right:-.50em;
-							text-align: right;							
+							text-align: right;
+							font-size:20px;						
 						}																
 				}
 
@@ -122,3 +141,21 @@ header
 				margin-top:20px;	
 			}
 	}
+
+footer 
+	{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		/* Set the fixed height of the footer here */
+		background-color: $greybg;
+	p
+		{	
+
+			font-size:10px;
+			padding:15px;
+			text-align: center;
+			overflow: visible;
+			margin:0px;
+		}	
+}

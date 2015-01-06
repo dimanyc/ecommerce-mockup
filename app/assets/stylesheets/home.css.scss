@@ -1,30 +1,38 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$black: black;
+$grey: lightslategray;
+$greybg: whitesmoke;
+$highlight:crimson;
 
+section.featured-image
+	{
+		position:relative;
+		h4
+		{
+			position:absolute;
+			bottom:20px;
+			left:20px;
+			color:white;
+			font-size:15em;
+		}
 
+	}
 
 section.products 
 	{
-		display: table;
-		table-layout: fixed;
-		
-		
-		hgroup
-			{
-				display: table-row;
-
-				min-width: 100%;
-				text-align: center;
 				h4
 					{
 						
+						width:100%;
 						text-align: center;
 						margin-top:20px;
 						margin-bottom:10px;
 						padding-bottom:0px;
-						font-size:24px;
-						width:100%;
+						font-size:20px;
+						display: block;
+						
 
 
 					}
@@ -35,11 +43,12 @@ section.products
 						background-color:black;	
 						margin-top:0px;	
 					}
-			}
+		
 				div
 					{
 						display: table-cell;
-						padding:15px;
+						padding-left:15px;
+						height: 539px;
 						a
 							{
 								max-height: 100%;
@@ -60,6 +69,7 @@ section.products
 										b
 										{
 											font-family: 'ProximaNovaBold';
+											font-weight: normal;
 											font-size:18px;
 											text-transform: uppercase;
 										}
@@ -69,13 +79,44 @@ section.products
 							}
 					}
 						div.child-0{padding-left:0!important;}			
-						div.child-3{padding-right:0!important;}	
 						a:hover img
 							{
 								filter: grayscale(0%);
 								-webkit-filter: grayscale(0%);
 								filter: none;
-										
 							}				
 
 	}
+aside
+{
+	div
+		{
+			background-color: $greybg;
+				ul
+					{
+						list-style-type:none;
+						li 
+							{
+								padding:15px;
+								height:150px;
+								a
+									{
+										height:100px;
+
+									
+										img
+											{
+												height:100%;
+												float:left;
+												padding-right:15px;		
+											}
+										span
+											{
+												color:$black;
+											}	
+									}										
+							}
+
+					}
+		}
+}	

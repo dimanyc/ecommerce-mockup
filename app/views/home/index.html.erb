@@ -1,19 +1,20 @@
 
 <section class="featured-image">
+<%= link_to about_path do %>
 	<img src="/assets/featured-image.jpg" alt="featured image from Exlixir - the Soviet sci-fi classics"/>
+	<h4>Random Article</h4>
+<% end %>	
 </section>
 
 <section class="products">
-<hgroup>
-<h4>Featured Products</h4>
-<hr/>
-</hgroup>
+		<h4>Featured Products</h4>
+		<hr/>
 	<% @products.each_with_index do |i,n| %>
 	<div class="child-<%=n%>">
 		<%= link_to product_path(i) do %>
 			<%= image_tag(i.image_url) %>
 			<span><b>"<%= i.title %>"</b><br/> by <i><%= i.author %></i></span>
-			<span><%= sprintf("$%0.02f",i.price) %></span><br/>
+			<span><%= sprintf("$%0.02f",i.price) %></span>
 		<%end%><br/>
 	</div><!--end_.product-thumb-->
 	<% end %>
